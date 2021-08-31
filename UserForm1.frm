@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm1 
    Caption         =   "UserForm1"
-   ClientHeight    =   3180
+   ClientHeight    =   4050
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   10350
@@ -14,8 +14,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Sub TextBox1_Change()
+Private Sub CommandButton1_Click()
+    Range("B8").Value = Range("A8").Value
+End Sub
 
+Private Sub CommandButton2_Click()
+    Worksheets(1).Range("A1:F4").Copy _
+    Destination:=Worksheets(2).Range("E5")
 End Sub
 
 Private Sub UserForm_Click()
